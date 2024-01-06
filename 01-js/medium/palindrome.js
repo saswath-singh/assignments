@@ -4,7 +4,21 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  let isPalindrome = false;
+  if (typeof str === 'string'){
+     isPalindrome = true;
+     const strArr = str.toLowerCase().split('').filter(x => /[a-z]/.test(x));
+   let i = 0, j = strArr.length-1
+    while(i<j){
+      if(strArr[i] !== strArr[j]){
+        isPalindrome = false;
+        break;
+      }
+      i++;
+      j--;
+    }
+  }
+  return isPalindrome;
 }
 
 module.exports = isPalindrome;
